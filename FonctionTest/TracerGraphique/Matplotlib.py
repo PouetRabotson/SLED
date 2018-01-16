@@ -95,6 +95,7 @@ for mesure in listeMesures:
 
 	plt.plot(mesure.mesure[0], mesure.mesure[1], label = mesure.nom)
 
+	plt.title("Courbe IV")
 	plt.xlabel('Tension [V]')
 	plt.ylabel('Courant [mA]')
 
@@ -118,6 +119,7 @@ for mesure in listeMesures:
 
 	plt.plot(mesure.mesure[0], puissance, label = mesure.nom)
 
+	plt.title("Courbe Puissance")
 	plt.xlabel('Tension [V]')
 	plt.ylabel('Puissance [W]')
 
