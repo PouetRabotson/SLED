@@ -88,19 +88,25 @@ recuperation_donnees()
 maxX = 0
 minY = 0
 
+plt.figure(figsize = (16,9))
+
 for mesure in listeMesures:
+
 
 	plt.plot(mesure.mesure[0], mesure.mesure[1], label = mesure.nom)
 
 	plt.xlabel('Tension [V]')
 	plt.ylabel('Courant [mA]')
 
-	plt.legend()
+	plt.tight_layout(rect = [0, 0, 0.8, 1])
+	plt.legend(bbox_to_anchor = (1.01, 1), loc = 2, borderaxespad = 0)
 
 plt.gca().invert_yaxis()
 plt.grid(axis='both')
-plt.show()
+plt.savefig('IV.jpg')
 
+
+plt.figure(figsize = (16,9))
 
 for mesure in listeMesures:
 	puissance = mesure.mesure[0] * (mesure.mesure[1]/1000)
@@ -115,11 +121,13 @@ for mesure in listeMesures:
 	plt.xlabel('Tension [V]')
 	plt.ylabel('Puissance [W]')
 
-	plt.legend()
+	plt.tight_layout(rect = [0, 0, 0.8, 1])
+	plt.legend(bbox_to_anchor = (1.01, 1), loc = 2, borderaxespad = 0.)
 
 plt.gca().invert_yaxis()
 axes = plt.gca()
 axes.set_ylim([0, minY - 0.001])
 plt.grid(axis='both')
+plt.savefig("Piv.jpg")
 plt.show()
 
